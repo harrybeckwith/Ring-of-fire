@@ -1,0 +1,40 @@
+.container {
+  max-width: 300px;
+  margin: 10% auto;
+  text-align: center;
+  height: 300px;
+}
+
+#card {
+  transition: 1s;
+}
+#card img {
+  width: 200px;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+}
+
+#nextCard {
+  background: #4285f4;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-sizing: content-box;
+  color: #fff;
+  font-size: 14px;
+  line-height: 36px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  display: block;
+  width: 130px;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.buttonContainer {
+  clear: both;
+}
