@@ -65,9 +65,8 @@ var card = [
 "<img src ='img/cards/ace_of_clubs.png'>",
 "<img src ='img/cards/ace_of_diamonds.png'>",
 "<img src ='img/cards/ace_of_hearts.png'>",
-"<img src ='img/cards/ace_of_spades.png'>",
+"<img src ='img/cards/ace_of_spades.png'>"
 
-"<img src ='img/cards/red_joker.png'>"
 
 ];
 // Display to screen
@@ -77,8 +76,10 @@ var display = function(info) {
 }
 // Counter for king class
 var counter = 0;
+var cardCounter = 53;
 // On click display random array item into card div
 $('#nextCard').on('click', function() {
+
     // Change inner text from start to next Card
     $(this).text('Next Card');
 // Random card
@@ -86,7 +87,7 @@ $('#nextCard').on('click', function() {
 // Display random card
   display(random);
   // Only display each card once
-card.splice(card.indexOf(random), 1);
+
 // Check num of kings that have been displayed
   if ($('img').hasClass("king")) {
     counter = counter + 1;
@@ -94,9 +95,12 @@ card.splice(card.indexOf(random), 1);
 // End game once counter is 4
   if (counter == 4) {
     $(this).text('Game over!');
-    alert('The game has ended, press ok to play again.');
+    alert('Four kings drawn! Game Over! Press ok to play again.');
     // Reset counter
     counter = 0;
+    // Reset Game
+    cardCounter = 54;
+
     // Display back of card
     $('#card img').attr('src', 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS2vLh8AfS-SWpupi41PKINzYF0HdYq7tYvywUg9IvWfs_u6hXw9w');
     // Display start button
@@ -104,8 +108,11 @@ card.splice(card.indexOf(random), 1);
      // Clear rule text
      $('#card p').text(' ');
   }
-
+    cardCounter -= 1;
+    $('.cardCounter').text(cardCounter);
 
 });
+
+card.splice(card.indexOf(random), 1);
 
 });
